@@ -1,5 +1,5 @@
 # NkrIG
-Broncode voor de FHIR implementatiegids voor (aanlevering aan de) de Nederlandse Kankerregistratie.
+Broncode voor de FHIR implementatiegids voor (aanlevering aan de) de Nederlandse Kankerregistratie. Bekijk de implementatiegids op: https://iknl.github.io/NkrIG/
 
 ### Step 1 - Install required software
 This project uses [FSH](https://hl7.org/fhir/uv/shorthand/) and [sushi](https://fshschool.org/docs/sushi/). Therefore, it requires [Node.js](https://nodejs.org/en). The [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) additionally requires Java to be present on the system.
