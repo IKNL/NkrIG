@@ -2,7 +2,7 @@
 // This file can be renamed, and additional FSH files can be added.
 // SUSHI will look for definitions in any file using the .fsh ending.
 Profile: MyPatient
-Parent: Patient
+Parent: nl-core-Patient
 Description: "An example profile of the Patient resource."
 * name 1..* MS
 
