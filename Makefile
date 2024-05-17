@@ -3,10 +3,10 @@ all: build open
 build: sushi ig
 
 sushi:
-	time sushi
+	sushi
 
 ig:
-	time ./_genonce.sh -no-sushi
+	./_genonce.sh -no-sushi
 
 open:
 	open output/index.html
