@@ -51,6 +51,9 @@ jobs:
         run: java -jar publisher.jar -ig ig.ini
 
       - run: ls -la
+      
+      - name: Copy the package feed
+        run: cp package-feed.xml output
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
