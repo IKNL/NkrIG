@@ -38,11 +38,16 @@ jobs:
 
       - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.10.0-beta.1
       - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.10.0-beta.1
+      - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-beta.5
+      
       - name: Manually install nl-core dependency *with* snapshots
         run: tar xvzf vendor/nictiz.fhir.nl.r4.nl-core-0.10.0-beta.1-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.10.0-beta.1
 
-      - name: Manually install zib202 dependency *with* snapshots
+      - name: Manually install zib2020 dependency *with* snapshots
         run: tar xvzf vendor/nictiz.fhir.nl.r4.zib2020-0.10.0-beta.1-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.10.0-beta.1
+
+      - name: Manually install medicationprocess9 dependency *with* snapshots
+        run: tar xvzf vendor/nictiz.fhir.nl.r4.medicationprocess9-2.0.0-beta.5-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-beta.5
 
       - name: Get IG Publisher jar
         run: curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
