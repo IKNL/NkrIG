@@ -18,7 +18,7 @@ Id: ncr-ehr-condition
 * code.coding[icd10coding].system = "http://hl7.org/fhir/sid/icd-10-nl" (exactly)
 * code.coding[icd10coding].code 1..
 * bodySite.extension[laterality] ^sliceName = "laterality"
-* bodySite.extension[laterality] ^mustSupport = true
+* bodySite.extension[laterality] MS
 * subject only Reference(NcrEhrPatient)
 * subject MS
 * recordedDate 1.. MS
