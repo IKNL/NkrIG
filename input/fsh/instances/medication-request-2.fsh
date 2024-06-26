@@ -1,5 +1,5 @@
 Instance: medication-request-2
-InstanceOf: MpMedicationAgreement
+InstanceOf: NcrEhrMedicationAgreement
 Usage: #inline
 * status = #completed
 * intent = #order

@@ -10,3 +10,5 @@ Alias: $sct = http://snomed.info/sct
 Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 Alias: $document-type = http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4/NamingSystem/document-type
 Alias: $workflow-episodeOfCare = http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare
+Alias: $atc = http://www.whocc.no/atc
+Alias: $zi-number-cs = urn:oid:2.16.840.1.113883.2.4.4.8

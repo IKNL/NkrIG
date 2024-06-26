@@ -1,5 +1,5 @@
 Instance: medication-administration-2
-InstanceOf: MpMedicationAdministration2
+InstanceOf: NcrEhrMedicationAdministration
 Usage: #inline
 * status = #completed
 * category = http://snomed.info/sct#18629005 "Medication administration"

@@ -1,7 +1,7 @@
 Instance: medication-1
-InstanceOf: MpPharmaceuticalProduct
+InstanceOf: NcrEhrMedication
 Usage: #inline
-* code[+].coding[0] = http://www.whocc.no/atc#L01DC03 "mitomycin"
-* code[=].coding[1] = urn:oid:2.16.840.1.113883.2.4.4.8#17077788 "MITOMYCINE MEDAC PDR V INTRAVES GEBR 40MG+SV 40ML"
+* code[+].coding[atc] = $atc#L01DC03 "mitomycin"
+* code[=].coding[zi-number] = $zi-number-cs#17077788 "MITOMYCINE MEDAC PDR V INTRAVES GEBR 40MG+SV 40ML"
 * code[=].text = "MITOMYCINE"
 * form = urn:oid:2.16.840.1.113883.2.4.4.11#000440 "BLAASSPOELING"
