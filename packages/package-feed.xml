@@ -8,7 +8,7 @@
     <description>Packages published by IKNL</description>
     <link>http://iknl.github.io/NkrIG/package-feed.xml</link>
     <generator>IKNL FHIR Publication tooling</generator>
-    <lastBuildDate>Tue, 04 Jun 2024 10:03:05 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jul 2024 09:14:22 GMT</lastBuildDate>
     <atom:link href="http://iknl.github.io/NkrIG/package-feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <pubDate>Wed, 22 May 2024 03:20:00 +0000</pubDate>
     <language>en</language>
@@ -30,6 +30,15 @@
       <dc:creator>IKNL</dc:creator>
       <fhir:version>4.0.1</fhir:version>
       <pubDate>Tue, 04 Jun 2024 10:03:05 GMT</pubDate>
+    </item>
+    <item>
+      <title>iknl.fhir.nl.r4.palga#1.0.1</title>
+      <description>IKNL profiles to fill the NCR (NKR) with data that is sent to IKNL by Palga</description>
+      <link>https://iknl.github.io/NkrIG/iknl-palga-r4/1.0.1/iknl.fhir.nl.r4.palga.tgz</link>
+      <guid isPermaLink="true">https://iknl.github.io/NkrIG/iknl-palga-r4/1.0.1/iknl.fhir.nl.r4.palga.tgz</guid>
+      <dc:creator>IKNL</dc:creator>
+      <fhir:version>4.0.1</fhir:version>
+      <pubDate>Tue, 16 Jul 2024 09:14:22 GMT</pubDate>
     </item>
   </channel>
 </rss>
