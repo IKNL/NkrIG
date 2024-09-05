@@ -26,7 +26,7 @@ Id: ncr-ehr-patient
 * name[nameInformation].given ^slicing.discriminator.type = #pattern
 * name[nameInformation].given ^slicing.discriminator.path = "extension('http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier').value"
 * name[nameInformation].given ^slicing.rules = #open
-* name[nameInformation].given contains initials 1..1 MS
+* name[nameInformation].given contains initials 1..* MS
 * name[nameInformation].given[initials] ^short = "Initialen"
 * name[nameInformation].given[initials] ^definition = "Initialen"
 * name[nameInformation].given[initials].extension ^mustSupport = false
