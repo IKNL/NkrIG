@@ -83,6 +83,10 @@ dependencies:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Business logica: Businesslogics.html
+  Requirements: requirements.html
+  Afwijkingen van zibs 2020: Afwijkingenvanzibs2020.html
+  Profielen en conformance: Profielenenconformance.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
