@@ -8,6 +8,7 @@ Id: ncr-ehr-procedure-event
 * extension[episodeOfCare].value[x] only Reference(NcrEhrEpisodeOfCare)
 * extension[episodeOfCare].value[x] ^type.aggregation = #bundled
 * code 1.. MS
+* code from NcrEhrProcedureVS
 * subject only Reference(NcrEhrPatient)
 * subject MS
 * performedPeriod MS

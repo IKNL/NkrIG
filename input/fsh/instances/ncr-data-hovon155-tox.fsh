@@ -1,7 +1,7 @@
 Instance: ncr-data-hovon155-tox
 InstanceOf: Bundle
 Title: "ncr-data-hovon155-tox"
-Usage: #definition
+Usage: #example
 * type = #collection
 * timestamp = "2024-02-07T09:07:55.4640378Z"
 * meta.tag = $processing-target#HOV155

@@ -3,6 +3,6 @@ InstanceOf: NcrEhrMedicationAgreement
 Usage: #inline
 * status = #completed
 * intent = #order
-* medicationReference = Reference(https://fhir.example.org/Medication/medication-2)
-* reasonReference = Reference(https://fhir.example.org/Condition/encounter-diagnosis-2)
-* subject = Reference(https://fhir.example.org/Patient/patient-2)
+* medicationReference = Reference(medication-2)
+* reasonReference = Reference(encounter-diagnosis-2)
+* subject = Reference(patient-2)

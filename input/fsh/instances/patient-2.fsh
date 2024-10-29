@@ -1,7 +1,7 @@
 Instance: patient-2
 InstanceOf: NcrEhrPatient
 Usage: #inline
-* identifier[patientnummer].assigner = Reference(https://fhir.example.org/Organization/organization-1)
+* identifier[patientnummer].assigner = Reference(organization-1)
 * identifier[patientnummer].value = "009999117"
 * name[nameInformation].extension[nameUsage].valueCode = #NL1
 * name[nameInformation].family = "van Agtmaal"
