@@ -3,11 +3,11 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: nkr
-canonical: http://fhir.iknl.nl
-name: NkrIG
+id: iknl.fhir.nl.r4.ncr-ehr
+canonical: http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4
+name: iknl_ncr_ehr_r4
 title: FHIR Implementatiegids voor de Nederlandse Kankerregistratie
-description: FHIR Implementatiegids voor de Nederlandse Kankerregistratie
+description: Deze implementatiegids beschrijft hoe ziekenhuizen, epd-leveranciers en andere partijen die bevoegd zijn om data uit elektronische patiëntendossiers (epd's) of andere relevante databronnen te halen, verbinding kunnen maken met de Nederlandse Kankerregistratie (NKR).
 status: draft # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
@@ -25,11 +25,9 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  hl7.fhir.uv.ips: current
   nictiz.fhir.nl.r4.nl-core: 0.10.0-beta.1
   nictiz.fhir.nl.r4.zib2020: 0.10.0-beta.1
   nictiz.fhir.nl.r4.medicationprocess9: 2.0.0-beta.5 
-  # hl7.fhir.eu.extensions.r4: current
 
 # dependencies:
 #   hl7.fhir.us.core: 3.1.0
