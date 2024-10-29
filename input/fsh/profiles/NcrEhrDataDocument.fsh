@@ -1,8 +1,11 @@
 Profile: NcrEhrDataDocument
 Parent: DocumentReference
 Id: ncr-ehr-data-document
-* ^status = #draft
-* ^date = "2024-03-12T09:37:49.3339123+00:00"
+* ^version = "1.0.0"
+* ^status = #active
+* ^contact.name = "IKNL"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@iknl.nl"
 * status = #current (exactly)
 * date 1..
 * author 1..1

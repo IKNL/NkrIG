@@ -1,8 +1,11 @@
 Profile: NcrEhrSchemaDocument
 Parent: DocumentReference
 Id: ncr-ehr-schema-document
-* ^status = #draft
-* ^date = "2024-03-06T11:29:18.8243435+00:00"
+* ^version = "1.0.0"
+* ^status = #active
+* ^contact.name = "IKNL"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@iknl.nl"
 * status = #current (exactly)
 * category = $document-type#schema
 * content.attachment.contentType 1..

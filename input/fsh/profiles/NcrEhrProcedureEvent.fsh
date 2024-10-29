@@ -1,8 +1,11 @@
 Profile: NcrEhrProcedureEvent
 Parent: NlcoreProcedureevent
 Id: ncr-ehr-procedure-event
-* ^status = #draft
-* ^date = "2024-03-05T10:28:11.9260361+00:00"
+* ^version = "1.0.0"
+* ^status = #active
+* ^contact.name = "IKNL"
+* ^contact.telecom.system = #email
+* ^contact.telecom.value = "fhir@iknl.nl"
 * extension contains $workflow-episodeOfCare named episodeOfCare 1..1
 * extension[episodeOfCare] ^isModifier = false
 * extension[episodeOfCare].value[x] only Reference(NcrEhrEpisodeOfCare)
