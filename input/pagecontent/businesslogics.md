@@ -1,32 +1,34 @@
 # Business logica
 
-In deze sectie wordt beschreven hoe van een set van patiënten en dossierinformatie de relevante patiënten en van de relevante patiënten tot een set voor de NKR relevante gegevens te komen. Dit kan op basis van subsets uit waardelijsten of specifieke in- en exclusie criteria. Ten aanzien van de geautomatiseerde gegevensverzameling en -verstrekking bepaalt IKNL welke gegevens wanneer uit de Dataset op geautomatiseerde wijze door IKNL kunnen worden ontvangen met welke voorwaarden. Dit is noodzakelijk met het oog op haalbaarheid, betrouwbaarheid en veiligheid. 
+<!-- verplaatste naar selectie en abstractie epd data --> In deze sectie wordt beschreven hoe van een set van patiënten en dossierinformatie de relevante patiënten en van de relevante patiënten tot een set voor de NKR relevante gegevens te komen. Dit kan op basis van subsets uit waardelijsten of specifieke in- en exclusie criteria. Ten aanzien van de geautomatiseerde gegevensverzameling en -verstrekking bepaalt IKNL welke gegevens wanneer uit de Dataset op geautomatiseerde wijze door IKNL kunnen worden ontvangen met welke voorwaarden. Dit is noodzakelijk met het oog op haalbaarheid, betrouwbaarheid en veiligheid. 
 
 ### Disclaimer huidige status
 De profielen en de bijbehorende valuesets voor in- en exclusie zijn momenteel nog in ontwikkeling. Daarom is ervoor gekozen om selectie en filtering bij de bron te laten plaatsvinden, in plaats van deze af te dwingen binnen de profielen. Hierdoor kunnen profielen, zoals het profiel voor procedures, in eerste instantie worden gebruikt voor operaties, maar ook worden hergebruikt voor andere toepassingen, zoals radiotherapie. In latere versies worden specifieke valuesets per item in de profielen toegevoegd, waarbij deze zullen aansluiten op de hier beschreven business logica.
 
 ### Gebruiksscenario 
-Het gebruiksscenario voor de aanlevering aan de NKR vormt de eerste stap in het registreren van tumoren in de Nederlandse Kankerregistratie. . De NKR omvat informatie over diagnostiek, diagnose, tumorkarakteristieken en initiële behandeling, ongeacht de behandellocatie. In de eerste versie van  <!--nog niet helemaal mooi verwoord de berichten -->wordt een initiële set gegevens aangeleverd, die vervolgens door datamanagers van IKNL gevalideerd en verrijkt kan worden. IKNL matcht de patiënt eventueel met reeds bestaande gegevens en vult deze aan waar nodig. De patiëntselectie gebeurt op basis van ICD-10 diagnosecodes. Vervolgens wordt, 28 dagen na het vastleggen van de diagnose, een relevante set gegevens over de patiënt verzameld op basis van de gedefinieerde profielen. Deze gegevens worden in een bundel verstuurd naar de NKR.
+<!-- verplaatste naar selectie en abstractie epd data -->Het gebruiksscenario voor de aanlevering aan de NKR vormt de eerste stap in het registreren van tumoren in de Nederlandse Kankerregistratie. . De NKR omvat informatie over diagnostiek, diagnose, tumorkarakteristieken en initiële behandeling, ongeacht de behandellocatie. In de eerste versie van  <!--nog niet helemaal mooi verwoord de berichten -->wordt een initiële set gegevens aangeleverd, die vervolgens door datamanagers van IKNL gevalideerd en verrijkt kan worden. IKNL matcht de patiënt eventueel met reeds bestaande gegevens en vult deze aan waar nodig. De patiëntselectie gebeurt op basis van ICD-10 diagnosecodes. Vervolgens wordt, 28 dagen na het vastleggen van de diagnose, een relevante set gegevens over de patiënt verzameld op basis van de gedefinieerde profielen. Deze gegevens worden in een bundel verstuurd naar de NKR.
 
 ### Patient identificatie
 #### Patientidentificatie en registratie
-De NKR gebruikt het patiëntnummer van een instelling in combinatie met de AGB-code van die instelling voor patiëntidentificatie. Wanneer een patiënt bij meerdere instellingen bekend is, worden de verschillende patiëntnummers en bijbehorende instellingen geregistreerd. Op basis van de NAW-gegevens (naam, postcode), geboortedatum en tumorgegevens worden de gegevens uit de verschillende instellingen aan elkaar gekoppeld.
+<!-- verplaatste naar selectie en abstractie epd data -->De NKR gebruikt het patiëntnummer van een instelling in combinatie met de AGB-code van die instelling voor patiëntidentificatie. Wanneer een patiënt bij meerdere instellingen bekend is, worden de verschillende patiëntnummers en bijbehorende instellingen geregistreerd. Op basis van de NAW-gegevens (naam, postcode), geboortedatum en tumorgegevens worden de gegevens uit de verschillende instellingen aan elkaar gekoppeld.
 
-### Inclusie en exclusie criteria
+### Inclusie en exclusiecriteria
 #### Patientselectie voor inclusie
-Voor de patiëntselectie binnen de NKR wordt uitgegaan van ICD-10 diagnoses. Alleen patiënten met een diagnose uit een vooraf gedefinieerde subset worden opgenomen in de registratie. Hierbij is er een vertraging van 28 dagen ingebouwd. In deze periode worden enerzijds de eerste behandelgegevens verzameld en anderzijds kan een verdenking bevestigd worden. Dit voorkomt dat verdenkingen als vals-positieven in de NKR worden opgenomen.
+<!-- verplaatste naar selectie en abstractie epd data -->Voor de patiëntselectie binnen de NKR wordt uitgegaan van ICD-10 diagnoses. Alleen patiënten met een diagnose uit een vooraf gedefinieerde subset worden opgenomen in de registratie. Hierbij is er een vertraging van 28 dagen ingebouwd. In deze periode worden enerzijds de eerste behandelgegevens verzameld en anderzijds kan een verdenking bevestigd worden. Dit voorkomt dat verdenkingen als vals-positieven in de NKR worden opgenomen.
 
 #### Patient exclusie 
-Patiënten hebben de mogelijkheid om expliciet aan te geven dat hun gegevens niet in de NKR worden opgenomen. Een voorbeeld hiervan is de expliciete opt-out voor het delen van gegevens ten behoeve van wetenschappelijk onderzoek en scholing. Wanneer patiënten deze opt-out hebben gekozen, mogen hun gegevens niet naar de NKR worden verstuurd, zelfs met terugwerkende kracht.
+<!-- verplaatste naar selectie en abstractie epd data -->Patiënten hebben de mogelijkheid om expliciet aan te geven dat hun gegevens niet in de NKR worden opgenomen. Een voorbeeld hiervan is de expliciete opt-out voor het delen van gegevens ten behoeve van wetenschappelijk onderzoek en scholing. Wanneer patiënten deze opt-out hebben gekozen, mogen hun gegevens niet naar de NKR worden verstuurd, zelfs met terugwerkende kracht.
 
 ### Triggers versturen berichten
-De trigger voor het versturen van patiëntgegevens naar de NKR is een nieuwe diagnose uit de ICD-10 waardelijst <!--link naar deze waardelijst of waar deze te vinden is toevoegen -->, 28 dagen na de eerste vastlegging van de diagnose.
+<!-- verplaatste naar selectie en abstractie epd data -->De trigger voor het versturen van patiëntgegevens naar de NKR is een nieuwe diagnose uit de ICD-10 waardelijst <!--link naar deze waardelijst of waar deze te vinden is toevoegen -->, 28 dagen na de eerste vastlegging van de diagnose. We verwachten dat dagelijks berichten worden gestuurd die voldoen aan deze conditie. 
 
 ### Logica in opstellen berichten
 #### operatieve verrichtingen
-Voor operatieve verrichtingen geldt de logica dat elke verrichting wordt verstuurd wanneer deze deel uitmaakt van het behandeltraject voor een diagnose uit de ICD-10 waardelijst. Dit is als volgt gemodelleerd in FHIR-resources: de operatie wordt vastgelegd in een procedure. De procedure bevat een reason reference, wat verwijst naar de conditie waarvoor de operatie is uitgevoerd. Deze conditie moet vallen binnen de vastgestelde ICD-10 diagnoselijst.
+<!-- verplaatste naar selectie en abstractie epd data -->Voor operatieve verrichtingen geldt de logica dat elke verrichting wordt verstuurd wanneer deze deel uitmaakt van het behandeltraject voor een diagnose uit de ICD-10 waardelijst.
 
-Op dit moment wordt deze logica alleen toegepast voor long- en colorectale kankers. <!-- besluiten of dit er in moet blijven staan>
+ 
+Dit is als volgt gemodelleerd in FHIR-resources: de operatie wordt vastgelegd in een procedure. De procedure heeft een attribuut `reasonReference`, wat verwijst naar de diagnose waarvoor de operatie is uitgevoerd. Deze conditie moet vallen binnen de vastgestelde ICD-10 diagnoselijst.
+
 
 #### Waarde condition category
 In het profiel `NcrEhrCondition` wordt verwacht dat er een **category** wordt meegestuurd. Voor elke tumor is het van belang om vast te stellen of het om een primaire diagnose gaat of om een bijkomende diagnose. Primaire diagnoses worden verstuurd met de category: `encounter diagnosis`, terwijl bijkomende diagnoses, zoals metastasen, worden verstuurd met de category: `problem list item`.
