@@ -80,8 +80,8 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Business logica: Businesslogics.html
-  Requirements: requirements.html
+  Business logica: businesslogics.html
+  Requirements: Requirements.html
   Afwijkingen van zibs 2020: Afwijkingenvanzibs2020.html
   Profielen en conformance: Profielenenconformance.html
   Versiebeheer: Versiebeheer.html
