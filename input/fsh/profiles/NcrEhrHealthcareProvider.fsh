@@ -1,9 +1,9 @@
+Alias: $nl-core-HealthcareProvider-Organization = http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
+
 Profile: NcrEhrHealthcareProvider
-Parent: NlcoreHealthcareProviderOrganization
+Parent: $nl-core-HealthcareProvider-Organization
 Id: ncr-ehr-healthcare-provider
-* ^version = "1.0.0"
-* ^status = #active
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
-* identifier[agb] 1..1 MS
+* identifier contains agb 1..1 MS
