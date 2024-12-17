@@ -25,7 +25,7 @@ Id: ncr-ehr-medication
 * form.coding ^slicing.discriminator.type = #value
 * form.coding ^slicing.discriminator.path = "$this"
 * form.coding ^slicing.rules = #open
-* form.coding contains pharmaceuticalForm 1..1 // [TODO] Klopt de cardinaliteit?
+* form.coding contains pharmaceuticalForm 0..1
 * form.coding[pharmaceuticalForm] ^sliceIsConstraining = true
 * form.coding[pharmaceuticalForm] from $pharmaceutical-form-vs (required)
 * form.coding[pharmaceuticalForm].display 1..
