@@ -1,0 +1,73 @@
+on:
+  push:
+    branches:
+      - release/*
+  workflow_dispatch:
+
+jobs:
+  Run-IG-Builder:
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    name: Run IG builder on main and publish on GitHub Pages
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup JDK version
+        uses: actions/setup-java@v4.0.0
+        with:
+          java-version: 21
+          distribution: temurin
+
+      - name: Install GraphViz and Jekyll
+        run: sudo apt update; sudo apt install graphviz jekyll
+
+      - name: Install sushi
+        run: npm install fsh-sushi
+
+      - name: Install sushi (global)
+        run: npm install -g fsh-sushi
+
+      - name: Checkout IG files
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.10.0-beta.1
+      - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.10.0-beta.1
+      - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-beta.5
+      
+      - name: Manually install nl-core dependency *with* snapshots
+        run: tar xvzf vendor/nictiz.fhir.nl.r4.nl-core-0.10.0-beta.1-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.10.0-beta.1
+
+      - name: Manually install zib2020 dependency *with* snapshots
+        run: tar xvzf vendor/nictiz.fhir.nl.r4.zib2020-0.10.0-beta.1-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.10.0-beta.1
+
+      - name: Manually install medicationprocess9 dependency *with* snapshots
+        run: tar xvzf vendor/nictiz.fhir.nl.r4.medicationprocess9-2.0.0-beta.5-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-beta.5
+
+      - name: remove duplicate values for meta.source-property of ValueSet-resources in the remedicationprocess9 package
+        run: find ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-beta.5 -type f -name '*' -exec sed -i 's/\("meta":{\("lastUpdated":"[^"]*",\)\?\)"source":"http:\/\/decor\.nictiz\.nl\/fhir\/4.0\/mp-",/\1/' {} \;
+
+      - name: Get IG Publisher jar
+        run: curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
+
+      - name: Run the IG Builder
+        run: java -jar publisher.jar -ig ig.ini
+
+      - run: ls -la
+      
+      - name: Copy the packages + feed
+        run: cp -r packages/* output
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: 'github-pages'
+          path: 'output'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
