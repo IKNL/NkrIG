@@ -9,8 +9,9 @@ Id: ncr-ehr-patient
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
 * identifier 1..
-* identifier[bsn] 0..0    
-* identifier[patientnummer] 1..1 MS
+* identifier contains
+    patientnummer 1..1 MS
+* identifier[bsn] 0..0   
 * identifier[patientnummer] ^short = "Patientnummer van de instelling"
 * identifier[patientnummer] ^definition = "Patientnummer van de Instelling"
 * identifier[patientnummer] ^patternIdentifier.type = $v2-0203#MR
@@ -22,6 +23,7 @@ Id: ncr-ehr-patient
 * identifier[patientnummer].assigner ^short = "Instelling die patientnummer heeft toegekend"
 * identifier[patientnummer].assigner ^definition = "Instelling die patientnummer heeft toegekend"
 * identifier[patientnummer].assigner ^type.aggregation = #bundled
+* name[nameInformation] 0..1
 * name[nameInformation].family MS
 * name[nameInformation].family.extension[prefix] ^sliceName = "prefix"
 * name[nameInformation].family.extension[prefix] ^short = "Voorvoegsel van geboortenaam"
@@ -34,6 +36,7 @@ Id: ncr-ehr-patient
 * name[nameInformation].given ^slicing.discriminator.type = #pattern
 * name[nameInformation].given ^slicing.discriminator.path = "extension('http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier').value"
 * name[nameInformation].given ^slicing.rules = #open
+* name[nameInformation].given contains initials 1.. MS
 * name[nameInformation].given[initials] ^sliceName = "initials"
 * name[nameInformation].given[initials] ^short = "Initialen"
 * name[nameInformation].given[initials] ^definition = "Initialen"

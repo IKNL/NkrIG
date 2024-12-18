@@ -1,6 +1,3 @@
-Alias: $nl-core-HealthcareProvider-Organization = http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
-Alias: $ncr-ehr-schema-document = http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4/StructureDefinition/ncr-ehr-schema-document
-
 Profile: NcrEhrDataDocument
 Parent: DocumentReference
 Id: ncr-ehr-data-document
@@ -22,4 +19,4 @@ Id: ncr-ehr-data-document
 * context.related ^slicing.discriminator.path = "resolve()"
 * context.related ^slicing.rules = #open
 * context.related contains schema 1..*
-* context.related[schema] only Reference($ncr-ehr-schema-document)
+* context.related[schema] only Reference(NcrEhrSchemaDocument)

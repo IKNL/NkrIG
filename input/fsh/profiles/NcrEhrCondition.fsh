@@ -1,11 +1,6 @@
-Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
-Alias: $nl-core-Problem = http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem
-Alias: $ncr-ehr-patient = http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4/StructureDefinition/ncr-ehr-patient
-
 Profile: NcrEhrCondition
 Parent: $nl-core-Problem
 Id: ncr-ehr-condition
-* ^version = "1.0.0"
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
@@ -25,6 +20,6 @@ Id: ncr-ehr-condition
 * code.coding[icd10coding].code 1..
 * bodySite.extension[laterality] ^sliceName = "laterality"
 * bodySite.extension[laterality] ^mustSupport = true
-* subject only Reference($ncr-ehr-patient)
+* subject only Reference(NcrEhrPatient)
 * subject MS
 * recordedDate 1.. MS

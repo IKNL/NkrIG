@@ -1,5 +1,3 @@
-Alias: $document-type = http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4/NamingSystem/document-type
-
 Profile: NcrEhrSchemaDocument
 Parent: DocumentReference
 Id: ncr-ehr-schema-document
