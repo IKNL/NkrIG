@@ -9,9 +9,8 @@ Id: ncr-ehr-patient
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
 * identifier 1..
-* identifier contains
-    bsn 0..0 and
-    patientnummer 1..1 MS
+* identifier[bsn] 0..0    
+* identifier[patientnummer] 1..1 MS
 * identifier[patientnummer] ^short = "Patientnummer van de instelling"
 * identifier[patientnummer] ^definition = "Patientnummer van de Instelling"
 * identifier[patientnummer] ^patternIdentifier.type = $v2-0203#MR
