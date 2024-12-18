@@ -7,4 +7,4 @@ Id: ncr-ehr-healthcare-provider
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
-* identifier contains agb 1..1 MS
+* ^identifier[agb] 1..1 MS
