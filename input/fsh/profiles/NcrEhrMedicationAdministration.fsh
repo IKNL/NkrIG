@@ -13,6 +13,6 @@ Id: ncr-ehr-medication-administration
 * subject only Reference(NcrEhrPatient)
 * context 1.. MS 
 * context only Reference(NcrEhrEpisodeOfCare)
-* effectiveDateTime MS 1..1
+* effectiveDateTime 1..1 MS
 * request MS
 * request only Reference(NcrEhrMedicationAgreement) 

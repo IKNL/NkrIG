@@ -10,7 +10,7 @@ Id: ncr-ehr-medication-agreement
 * intent = #order
 * medicationReference MS
 * medicationReference only Reference(NcrEhrMedication)
-* reasonReference MS 1..1
+* reasonReference 1..1 MS
 * reasonReference only Reference(NcrEhrCondition)
 * subject MS
 * subject only Reference(NcrEhrPatient)
