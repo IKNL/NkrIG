@@ -23,7 +23,6 @@ Id: ncr-ehr-patient
 * identifier[patientnummer].assigner ^short = "Instelling die patientnummer heeft toegekend"
 * identifier[patientnummer].assigner ^definition = "Instelling die patientnummer heeft toegekend"
 * identifier[patientnummer].assigner ^type.aggregation = #bundled
-* name contains nameInformation 0..1
 * name[nameInformation].family MS
 * name[nameInformation].family.extension[prefix] ^sliceName = "prefix"
 * name[nameInformation].family.extension[prefix] ^short = "Voorvoegsel van geboortenaam"

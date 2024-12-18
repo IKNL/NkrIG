@@ -5,6 +5,7 @@ Alias: $ncr-ehr-patient = http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4/StructureDefi
 Profile: NcrEhrCondition
 Parent: $nl-core-Problem
 Id: ncr-ehr-condition
+* ^version = "1.0.0"
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"

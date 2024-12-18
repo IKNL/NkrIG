@@ -1,7 +1,7 @@
 Profile: NcrEhrMedication
 Parent: MpPharmaceuticalProduct
 Id: ncr-ehr-medication
-* ^version = "0.1.0"
+* ^version = "1.0.0"
 * ^status = #draft
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
@@ -15,9 +15,6 @@ Id: ncr-ehr-medication
 * code.coding[ziCoding].code 1..
 * code.coding[atcCoding].system = "http://www.whocc.no/atc" (exactly)
 * code.coding[atcCoding].code 1..
-// [TODO] ZI-restricties in valueset
-// - ATC-code met een beperkte selectie op L01E, L01F en L01X
-// - 5.	Moeten de ATC-codes beginnend met L01B, L01C en L01D toegevoegd worden aan de query? Ja toevoegen en een lijst met eventuele exoten bijvoegen.
 * code.coding[ziCoding] ^sliceIsConstraining = true
 * code.coding[ziCoding].display 1..
 * code.coding[atcCoding].display 1..
