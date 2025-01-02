@@ -5,6 +5,7 @@ Alias: $ncr-ehr-healthcare-provider = http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4/S
 Profile: NcrEhrPatient
 Parent: $nl-core-Patient
 Id: ncr-ehr-patient
+* ^version = "1.0.0"
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"

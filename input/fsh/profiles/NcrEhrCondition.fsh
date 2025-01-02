@@ -1,6 +1,7 @@
 Profile: NcrEhrCondition
 Parent: $nl-core-Problem
 Id: ncr-ehr-condition
+* ^version = "1.0.1"
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
