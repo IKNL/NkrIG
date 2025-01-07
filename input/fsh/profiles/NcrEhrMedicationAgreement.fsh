@@ -8,7 +8,7 @@ Id: ncr-ehr-medication-agreement
 * ^contact.telecom.value = "fhir@iknl.nl"
 * status = #completed
 * intent = #order
-* medicationReference MS
+* medicationReference 1..1 MS
 * medicationReference only Reference(NcrEhrMedication)
 * reasonReference 1..1 MS
 * reasonReference only Reference(NcrEhrCondition)
