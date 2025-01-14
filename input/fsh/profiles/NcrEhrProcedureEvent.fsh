@@ -1,7 +1,7 @@
 Profile: NcrEhrProcedureEvent
 Parent: $nl-core-Procedure-event
 Id: ncr-ehr-procedure-event
-* ^version = "1.0.0"
+* ^version = "1.1.2"
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
