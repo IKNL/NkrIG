@@ -1,7 +1,7 @@
 Profile: NcrEhrMedicationAdministration
 Parent: MpMedicationAdministration2
 Id: ncr-ehr-medication-administration
-* ^version = "0.1.0"
+* ^version = "1.2.0"
 * ^status = #draft
 * ^contact.name = "IKNL"
 * ^contact.telecom.system = #email
