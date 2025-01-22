@@ -13,14 +13,13 @@ Id: ncr-ehr-medication
     and atcCoding 1..1 MS
 * code.coding[ziCoding].system = "urn:oid:2.16.840.1.113883.2.4.4.8" (exactly)
 * code.coding[ziCoding].code 1..1
+* code.coding[ziCoding].display 1..
 * code.coding[atcCoding].system = "http://www.whocc.no/atc" (exactly)
 * code.coding[atcCoding].code 1..
+* code.coding[atcCoding].display 1..
 // [TODO] ZI-restricties in valueset
 // - ATC-code met een beperkte selectie op L01E, L01F en L01X
 // - 5.	Moeten de ATC-codes beginnend met L01B, L01C en L01D toegevoegd worden aan de query? Ja toevoegen en een lijst met eventuele exoten bijvoegen.
-* code.coding[ziCoding] ^sliceIsConstraining = true
-* code.coding[ziCoding].display 1..
-* code.coding[atcCoding].display 1..
 * form 0..1 MS
 * form.coding ^slicing.discriminator.type = #value
 * form.coding ^slicing.discriminator.path = "$this"

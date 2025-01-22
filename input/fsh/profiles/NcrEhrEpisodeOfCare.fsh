@@ -7,7 +7,6 @@ Id: ncr-ehr-episode-of-care
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
 * diagnosis.extension contains NcrEhrDiagnosisGroup named ncrEhrDiagnosisGroup 0..1
-* diagnosis.extension[ncrEhrDiagnosisGroup] ^isModifier = false
 * diagnosis.extension[ncrEhrDiagnosisGroup].value[x] MS
 * diagnosis.condition only Reference(NcrEhrCondition)
 * diagnosis.condition ^type.aggregation = #bundled

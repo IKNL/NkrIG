@@ -3,6 +3,7 @@ Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $v3-AdministrativeGender = http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender
 Alias: $diagnosis-role = http://terminology.hl7.org/CodeSystem/diagnosis-role
 Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
+Alias: $condition-category-vs = http://hl7.org/fhir/ValueSet/condition-category
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $icd-10-nl = http://hl7.org/fhir/sid/icd-10-nl
 Alias: $sct = http://snomed.info/sct
