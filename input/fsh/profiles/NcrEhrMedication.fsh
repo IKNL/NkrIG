@@ -7,7 +7,7 @@ Id: ncr-ehr-medication
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "fhir@iknl.nl"
 * code.coding ^slicing.discriminator.type = #value
-* code.coding ^slicing.discriminator.path = "$this"
+* code.coding ^slicing.discriminator.path = "system"
 * code.coding ^slicing.rules = #open
 * code.coding contains ziCoding 0..1
     and atcCoding 1..1 MS
@@ -25,6 +25,5 @@ Id: ncr-ehr-medication
 * form.coding ^slicing.discriminator.path = "$this"
 * form.coding ^slicing.rules = #open
 * form.coding contains pharmaceuticalForm 0..1
-* form.coding[pharmaceuticalForm] ^sliceIsConstraining = true
 * form.coding[pharmaceuticalForm] from $pharmaceutical-form-vs (required)
 * form.coding[pharmaceuticalForm].display 1..
