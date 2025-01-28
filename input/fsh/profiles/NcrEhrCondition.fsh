@@ -9,7 +9,6 @@ Id: ncr-ehr-condition
 * clinicalStatus = $condition-clinical#active
 * category 1..
 * category ^mustSupport = false
-* category ^binding.strength = #required
 * category contains ncr-ehr-category 1..1 MS
 * category[ncr-ehr-category] from $condition-category-vs (required)
 * code 1.. MS

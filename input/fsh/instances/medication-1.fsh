@@ -1,5 +1,6 @@
 Instance: medication-1
 InstanceOf: NcrEhrMedication
+Usage: #inline
 * code.coding[atcCoding].code = #L01DC03
 * code.coding[atcCoding].display = "mitomycin"
 * code.coding[ziCoding].code = #17077788
