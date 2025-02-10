@@ -145,6 +145,8 @@ UpdatePackageFile()
   cat "${package_filename}" | jq 'del(."date")' | tee "${package_filename}" >/dev/null
   cat "${package_filename}" | jq 'del(.license)' | tee "${package_filename}" >/dev/null
   cat "${package_filename}" | jq 'del(."notForPublication")' | tee "${package_filename}" >/dev/null
+  cat "${package_filename}" | jq 'del(.dependencies."hl7.terminology.r4")' | tee "${package_filename}"  >/dev/null
+  cat "${package_filename}" | jq 'del(.dependencies."hl7.fhir.uv.extensions.r4")' | tee "${package_filename}"  >/dev/null
   cat "${package_filename}" | jq  '.name="iknl.fhir.nl.r4.ncr-ehr"' | tee "${package_filename}" >/dev/null
   cat "${package_filename}" | jq '. += {jurisdiction : "urn:iso:std:iso:3166#NL"}' | tee "${package_filename}" >/dev/null
   cat "${package_filename}" | jq  '.description="FHIR R4 profiles for the electronic health record (EHR) submissions to the Netherlands Cancer Registry (NCR)"' | tee "${package_filename}" >/dev/null
