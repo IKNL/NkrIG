@@ -17,13 +17,3 @@ Id: ncr-ehr-medication
 * code.coding[atcCoding].system = "http://www.whocc.no/atc" (exactly)
 * code.coding[atcCoding].code 1..
 * code.coding[atcCoding].display 1..
-// [TODO] ZI-restricties in valueset
-// - ATC-code met een beperkte selectie op L01E, L01F en L01X
-// - 5.	Moeten de ATC-codes beginnend met L01B, L01C en L01D toegevoegd worden aan de query? Ja toevoegen en een lijst met eventuele exoten bijvoegen.
-* form 0..1 MS
-* form.coding ^slicing.discriminator.type = #value
-* form.coding ^slicing.discriminator.path = "$this"
-* form.coding ^slicing.rules = #open
-* form.coding contains pharmaceuticalForm 0..1
-* form.coding[pharmaceuticalForm] from $pharmaceutical-form-vs (required)
-* form.coding[pharmaceuticalForm].display 1..

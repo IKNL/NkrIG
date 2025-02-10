@@ -16,4 +16,3 @@ Alias: $nl-core-Procedure-event = http://nictiz.nl/fhir/StructureDefinition/nl-c
 Alias: $workflow-episodeOfCare = http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare
 Alias: $atc = http://www.whocc.no/atc
 Alias: $zi-number-cs = urn:oid:2.16.840.1.113883.2.4.4.8
-Alias: $pharmaceutical-form-vs = http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.9.7.8--20200901000000
