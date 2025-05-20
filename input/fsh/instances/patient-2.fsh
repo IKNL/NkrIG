@@ -7,7 +7,7 @@ Usage: #inline
 * name[nameInformation].family = "van Agtmaal"
 * name[nameInformation].family.extension[prefix].valueString = "van"
 * name[nameInformation].family.extension[lastName].valueString = "Agtmaal"
-* name[nameInformation].given[initials] = "L"
+* name[nameInformation].given = "L"
 * gender = #female
 * gender.extension[genderCodelist].valueCodeableConcept = $v3-AdministrativeGender#F
 * birthDate = "1995-10-26"

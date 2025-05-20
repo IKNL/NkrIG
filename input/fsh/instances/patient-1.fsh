@@ -7,8 +7,8 @@ Usage: #inline
 * name[nameInformation].family = "van Asch"
 * name[nameInformation].family.extension[prefix].valueString = "van"
 * name[nameInformation].family.extension[lastName].valueString = "Asch"
-* name[nameInformation].given[initials][0] = "T"
-* name[nameInformation].given[initials][+] = "H"
+* name[nameInformation].given[0] = "T"
+* name[nameInformation].given[+] = "H"
 * gender = #male
 * gender.extension[genderCodelist].valueCodeableConcept = $v3-AdministrativeGender#M
 * birthDate = "1941-10-06"
