@@ -1,11 +1,8 @@
 Profile: NcrEhrSchemaDocument
 Parent: DocumentReference
 Id: ncr-ehr-schema-document
-* ^version = "1.0.0"
+* ^version = "1.2.2"
 * ^status = #active
-* ^contact.name = "IKNL"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@iknl.nl"
 * status = #current (exactly)
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"

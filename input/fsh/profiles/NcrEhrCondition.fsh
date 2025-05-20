@@ -1,10 +1,8 @@
 Profile: NcrEhrCondition
 Parent: $nl-core-Problem
 Id: ncr-ehr-condition
-* ^version = "1.1.2"
-* ^contact.name = "IKNL"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@iknl.nl"
+* ^version = "1.2.2"
+* ^status = #active
 * clinicalStatus 1.. MS
 * clinicalStatus = $condition-clinical#active
 * category 1..

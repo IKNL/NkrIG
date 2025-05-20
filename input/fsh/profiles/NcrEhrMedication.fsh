@@ -1,11 +1,8 @@
 Profile: NcrEhrMedication
 Parent: MpPharmaceuticalProduct
 Id: ncr-ehr-medication
-* ^version = "1.2.0"
-* ^status = #draft
-* ^contact.name = "IKNL"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@iknl.nl"
+* ^version = "1.2.2"
+* ^status = #active
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "system"
 * code.coding ^slicing.rules = #open

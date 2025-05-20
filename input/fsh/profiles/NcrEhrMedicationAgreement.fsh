@@ -1,11 +1,8 @@
 Profile: NcrEhrMedicationAgreement
 Parent: MpMedicationAgreement
 Id: ncr-ehr-medication-agreement
-* ^version = "1.2.0"
-* ^status = #draft
-* ^contact.name = "IKNL"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@iknl.nl"
+* ^version = "1.2.2"
+* ^status = #active
 * status = #completed
 * intent = #order
 * medicationReference 1..1 MS

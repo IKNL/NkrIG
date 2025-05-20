@@ -1,13 +1,10 @@
 Profile: NcrEhrMedicationAdministration
 Parent: MpMedicationAdministration2
 Id: ncr-ehr-medication-administration
-* ^version = "1.2.0"
-* ^status = #draft
-* ^contact.name = "IKNL"
-* ^contact.telecom.system = #email
-* ^contact.telecom.value = "fhir@iknl.nl"
+* ^version = "1.2.2"
+* ^status = #active
 * status = #completed
-* medicationReference MS 
+* medicationReference MS
 * medicationReference only Reference(NcrEhrMedication)
 * subject MS 
 * subject only Reference(NcrEhrPatient)

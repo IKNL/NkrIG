@@ -69,6 +69,10 @@ dependencies:
 #
 parameters:
   path-expansion-params: Parameters-expansion.json
+  apply-version: false
+  default-version: false
+  apply-copyright: false
+  default-copyright: false
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
