@@ -1,7 +1,6 @@
 Instance: ncr-chir
 InstanceOf: Bundle
 Title: "ncr-chir"
-Usage: #definition
 * type = #collection
 * timestamp = "2023-01-01T14:49:45.6439747Z"
 * meta.tag = $processing-target#NKR_CHIR
