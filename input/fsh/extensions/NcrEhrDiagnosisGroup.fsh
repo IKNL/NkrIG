@@ -4,5 +4,6 @@ Description: "An extension that indicates a grouping for Conditions in EpisodeOf
 Context: EpisodeOfCare.diagnosis
 * ^version = "1.2.2"
 * ^status = #active
+* ^date = "2025-02-10"
 * . ^definition = "The value of this extension is an integer that indicates the grouping."
 * value[x] only integer

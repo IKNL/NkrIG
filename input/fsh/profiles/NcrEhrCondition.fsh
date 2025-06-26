@@ -3,6 +3,7 @@ Parent: $nl-core-Problem
 Id: ncr-ehr-condition
 * ^version = "1.2.2"
 * ^status = #active
+* ^date = "2025-02-10"
 * clinicalStatus 1.. MS
 * clinicalStatus = $condition-clinical#active
 * category 1..

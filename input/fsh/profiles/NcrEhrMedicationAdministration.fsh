@@ -3,6 +3,7 @@ Parent: MpMedicationAdministration2
 Id: ncr-ehr-medication-administration
 * ^version = "1.2.2"
 * ^status = #active
+* ^date = "2025-02-10"
 * status = #completed
 * medicationReference MS
 * medicationReference only Reference(NcrEhrMedication)

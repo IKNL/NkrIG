@@ -3,6 +3,7 @@ Parent: EpisodeOfCare
 Id: ncr-ehr-episode-of-care
 * ^version = "1.2.2"
 * ^status = #active
+* ^date = "2025-02-10"
 * diagnosis.extension contains NcrEhrDiagnosisGroup named ncrEhrDiagnosisGroup 0..1
 * diagnosis.extension[ncrEhrDiagnosisGroup].value[x] MS
 * diagnosis.condition only Reference(NcrEhrCondition)
