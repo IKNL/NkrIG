@@ -1,9 +1,9 @@
-Instance: ncr-chir
+Instance: gbs-chir
 InstanceOf: Bundle
-Title: "ncr-chir"
+Title: "Bericht voor verrichting"
 * type = #collection
 * timestamp = "2023-01-01T14:49:45.6439747Z"
-* meta.tag = $processing-target#NKR_CHIR
+* meta.tag = $processing-target#NKR_GBS
 * entry[0].fullUrl = "https://fhir.example.org/Organization/organization-1"
 * entry[=].resource = organization-1
 * entry[+].fullUrl = "https://fhir.example.org/Patient/patient-2"

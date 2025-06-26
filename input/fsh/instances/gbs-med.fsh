@@ -1,9 +1,9 @@
-Instance: ncr-medadm
+Instance: gbs-med
 InstanceOf: Bundle
-Title: "ncr-medadm"
+Title: "Bericht voor medicatie"
 * type = #collection
 * timestamp = "2023-01-01T14:49:45.6439747Z"
-* meta.tag = $processing-target#NKR_ATC
+* meta.tag = $processing-target#NKR_GBS
 * entry[0].fullUrl = "https://fhir.example.org/MedicationAdministration/medication-administration-1"
 * entry[=].resource = medication-administration-1
 * entry[+].fullUrl = "https://fhir.example.org/Medication/medication-1"
