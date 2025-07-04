@@ -3,7 +3,7 @@ Parent: $nl-core-Patient
 Id: ncr-ehr-patient
 * ^version = "1.2.3"
 * ^status = #active
-* ^date = "2025-06-20"
+* ^date = "2025-07-04"
 * identifier contains
     patientnummer 1..1 MS
 * identifier[bsn] 0..0   
