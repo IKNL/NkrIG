@@ -22,3 +22,9 @@ Id: ncr-ehr-condition
 * subject only Reference(NcrEhrPatient)
 * subject MS
 * recordedDate 1.. MS
+* stage ^slicing.discriminator.type = #value
+* stage ^slicing.discriminator.path = "type"
+* stage ^slicing.rules = #open
+* stage contains tumorStage 0..1
+* stage[tumorStage].type = http://snomed.info/sct#254292007
+* stage[tumorStage].summary.text MS
