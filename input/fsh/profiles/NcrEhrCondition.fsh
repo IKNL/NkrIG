@@ -1,7 +1,7 @@
 Profile: NcrEhrCondition
 Parent: $nl-core-Problem
 Id: ncr-ehr-condition
-* ^version = "1.2.2"
+* ^version = "1.3.0"
 * ^status = #active
 * ^date = "2025-02-10"
 * clinicalStatus 1.. MS
@@ -22,9 +22,8 @@ Id: ncr-ehr-condition
 * subject only Reference(NcrEhrPatient)
 * subject MS
 * recordedDate 1.. MS
-* stage ^slicing.discriminator.type = #value
-* stage ^slicing.discriminator.path = "type"
-* stage ^slicing.rules = #open
-* stage contains tumorStage 0..1
-* stage[tumorStage].type = http://snomed.info/sct#254292007
-* stage[tumorStage].summary.text MS
+* stage ^short = "Cancer stage"
+* stage ..1
+* stage.summary 1..
+* stage.summary ^comment = "Only summary.text is used." 
+* stage.summary.text 1..1 MS
