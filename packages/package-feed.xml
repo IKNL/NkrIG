@@ -85,5 +85,14 @@
       <fhir:version>4.0.1</fhir:version>
       <pubDate>Fri, 04 Jul 2025 11:10:00 GMT</pubDate>
     </item>    
+    <item>
+      <title>iknl.fhir.nl.r4.ncr-ehr#1.3.0</title>
+      <description>FHIR R4 profiles for the electronic health record (EHR) submissions to the Netherlands Cancer Registry (NCR).</description>
+      <link>https://iknl.github.io/NkrIG/iknl-ncr-ehr-r4/1.3.0/iknl.fhir.nl.r4.ncr-ehr.tgz</link>
+      <guid isPermaLink="true">https://iknl.github.io/NkrIG/iknl-ncr-ehr-r4/1.3.0/iknl.fhir.nl.r4.ncr-ehr.tgz</guid>
+      <dc:creator>IKNL</dc:creator>
+      <fhir:version>4.0.1</fhir:version>
+      <pubDate>Wed, 10 Sep 2025 12:10:00 GMT</pubDate>
+    </item>    
   </channel>
 </rss>
