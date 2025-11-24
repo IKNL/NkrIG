@@ -1,9 +1,7 @@
 Profile: NcrEhrDataDocument
 Parent: DocumentReference
 Id: ncr-ehr-data-document
-* ^version = "1.2.2"
-* ^status = #active
-* ^date = "2025-02-10"
+* insert MetaRules
 * status = #current (exactly)
 * date 1..
 * author 1..1
