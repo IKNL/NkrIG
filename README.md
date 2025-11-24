@@ -63,9 +63,11 @@ If sushi complains about snapshots (_"Structure Definition http://nictiz.nl/fhir
 1. Download the following packages **with snapshots** from Simplifier:
   - [nictiz.fhir.nl.r4.nl-core](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core) .
   - [nictiz.fhir.nl.r4.zib2020](https://simplifier.net/packages/nictiz.fhir.nl.r4.zib2020).
+  - [nictiz.fhir.nl.r4.medicationprocess9](https://simplifier.net/packages/nictiz.fhir.nl.r4.medicationprocess9).
 2. Overwrite the contents of
-  - `~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.10.0/package` with the contents of the corresponding `tgz`.
-  - `~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.10.0/package` with the contents of the corresponding `tgz`.
+  - `~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.12.0/package` with the contents of the corresponding `tgz`.
+  - `~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.12.0/package` with the contents of the corresponding `tgz`.
+   - `~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9/package` with the contents of the corresponding `tgz`.
 3. Re-run `sushi`.
 
 
