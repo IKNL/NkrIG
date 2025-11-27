@@ -1,9 +1,7 @@
 Profile: NcrEhrMedication
 Parent: MpPharmaceuticalProduct
 Id: ncr-ehr-medication
-* ^version = "1.2.2"
-* ^status = #active
-* ^date = "2025-02-10"
+* insert MetaRules
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "system"
 * code.coding ^slicing.rules = #open
