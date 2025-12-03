@@ -1,5 +1,5 @@
 Profile: NcrEhrPatient
-Parent: $nl-core-Patient
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Id: ncr-ehr-patient
 * insert MetaRules
 * identifier contains

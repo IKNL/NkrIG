@@ -5,7 +5,7 @@ Id: ncr-ehr-data-document
 * status = #current (exactly)
 * date 1..
 * author 1..1
-* author only Reference($nl-core-HealthcareProvider-Organization)
+* author only Reference(http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization)
 * description 1..
 * content.attachment.contentType 1..
 * content.attachment.contentType = #application/json (exactly)
