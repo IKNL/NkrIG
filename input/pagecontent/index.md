@@ -19,7 +19,7 @@ De basis van deze implementatiegids is **FHIR R4**, met profielen gebaseerd op d
 
 Deze implementatiegids beschrijft de technische en inhoudelijke vereisten voor het verzamelen en versturen van patiëntgegevens. Het doel is om dit proces op een haalbare, betrouwbare en veilige manier te laten plaatsvinden. De richtlijnen in deze gids zijn van toepassing op de elektronische aanlevering van registratiegegevens door ziekenhuizen in Nederland. De aan te leveren gegevens omvatten patiëntgerelateerde informatie en zijn uitgewerkt in [itemssets]https://iknl.nl/nkr/registratie/itemsets. Uit de itemssets zijn gegevens die vaak gestructureerd geregistreerd worden en zo veel mogelijk onderdeel zijn van de BGZ geïdentificeerd. Dit is de basis voor de profielen in deze implementatiegids.
 
-### principes en toegepaste guidelines in implementatiegids:
+### Principes en toegepaste guidelines in implementatiegids:
 
 ### Leeswijzer 
 De implementatiegids is bedoeld voor zorginstellingen en leveranciers met basiskennis over de NKR en zibs-2020 en de NL-core.
@@ -47,6 +47,10 @@ Op dit moment zijn de volgende profielen ontwikkeld:
 - `NcrEhrProcedureEvent`
 - `NcrEhrHealthcareProvider`
 - `NcrEhrCondition`
+- `NcrEhrMedication`
+- `NcrEhrMedicationAgreement`
+- `NcrEhrMedicationAdministration`
+- `NcrEhrLaboratoryTestResult`
 
 ### Proces na Binnenkomend Bericht
 
