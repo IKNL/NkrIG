@@ -6,11 +6,15 @@ Deze sectie beschrijft welke profielen beschikbaar zijn en aan welke profielen m
 
 | NCR-EHR profile        | FHIR Base Profile            | Conformance  |
 | --------------- | ----------------------------------- | ------------ |
-| `NcrEhrPatient`         | `NL-Core-Patient`                   | Required     |
-| `NcrEhrEpisodeOfCare`         | `EpisodeOfCare`               | Required     |
-| `NcrEhrProcedureEvent`         | `NL-Core-Procedure-event`    |Required     |
-| `NcrEhrHealthcareProvider` |`NL-Core-HealthcareProvider-Organization`    | Required     |
-| `NcrEhrCondition`         | `NL-Core-Problem`          | Required     |
+| `NcrEhrPatient` | `NL-Core-Patient` | Required |
+| `NcrEhrEpisodeOfCare` | `EpisodeOfCare` | Required |
+| `NcrEhrProcedureEvent` | `NL-Core-Procedure-event` | Required |
+| `NcrEhrHealthcareProvider` |`NL-Core-HealthcareProvider-Organization` | Required |
+| `NcrEhrCondition` | `NL-Core-Problem` | Required |
+| `NcrEhrMedication` | `MpPharmaceuticalProduct` | |
+| `NcrEhrMedicationAdminstration` | `MpPharmaceuticalProduct` | |
+| `NcrEhrMedicationAgreement` | `MpMedicationAgreement` | |
+| `NcrEhrLaboratoryResult` | `nl-core-LaboratoryTestResult` | |
 {: .grid }
 
 
