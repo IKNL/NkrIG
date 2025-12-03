@@ -1,5 +1,5 @@
 Profile: NcrEhrLaboratoryResult
-Parent: nl-core-LaboratoryTestResult
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-LaboratoryTestResult
 Id: ncr-ehr-laboratory-result
 Title: "Ncr Ehr Laboratory Test Results"
 Description: "A laboratory result describes the result of a laboratory analysis"

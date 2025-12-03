@@ -1,5 +1,5 @@
 Profile: NcrEhrCondition
-Parent: $nl-core-Problem
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem
 Id: ncr-ehr-condition
 * insert MetaRules
 * clinicalStatus 1.. MS
