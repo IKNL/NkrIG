@@ -84,6 +84,7 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Datamode: profiles_mermaid.html
   Business logica: businesslogics.html
   Requirements: Requirements.html
   Afwijkingen van zibs 2020: Afwijkingenvanzibs2020.html
