@@ -1,5 +1,5 @@
 Profile: NcrEhrProcedureEvent
-Parent: $nl-core-Procedure-event
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-event
 Id: ncr-ehr-procedure-event
 * insert MetaRules
 * extension 1..

@@ -1,5 +1,5 @@
 Profile: NcrEhrMedicationAdministration
-Parent: MpMedicationAdministration2
+Parent: http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAdministration2
 Id: ncr-ehr-medication-administration
 * insert MetaRules
 * status = #completed

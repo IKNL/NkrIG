@@ -1,5 +1,5 @@
 Profile: NcrEhrMedication
-Parent: MpPharmaceuticalProduct
+Parent: http://nictiz.nl/fhir/StructureDefinition/mp-PharmaceuticalProduct
 Id: ncr-ehr-medication
 * insert MetaRules
 * code.coding ^slicing.discriminator.type = #value

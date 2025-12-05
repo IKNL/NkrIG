@@ -1,5 +1,5 @@
 Profile: NcrEhrMedicationAgreement
-Parent: MpMedicationAgreement
+Parent: http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement
 Id: ncr-ehr-medication-agreement
 * insert MetaRules
 * status = #completed
