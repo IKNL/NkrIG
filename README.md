@@ -23,14 +23,7 @@ sudo apt install openjdk-17-jre
 # Jekyll
 sudo apt-get install graphviz jekyll
 ```
-
-> [!TIP]
-> If you're running WSL2, the `open` command in the Makefile will fail. This can be fixed as follows:
-> - Install [WSLU](https://wslutiliti.es/wslu/install.html)
-> - Add `export BROWSER=wslview` to `~/.bashrc`: `echo 'BROWSER=wslview' >> ~/.bashrc`
-
-> [!TIP]
-> If you're using `zsh`, be sure to change to `~/.bashrc` to `~/.zshrc` in the above shell commands!
+  
 
 ### Step 2 - Clone the repo, and initialize publishers.
 
@@ -56,18 +49,17 @@ chmod +x _genonce.sh
 ./_genonce.sh
 ```
 
-## Troubleshooting
+## Troubleshooting missing snapshots
 
-If sushi complains about snapshots (_"Structure Definition http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient is missing a snapshot. Snapshot is required for import."_), please follow these steps:
+SUSHI requires snapshots to be present in the dependencies to convert FSH to FHIR. If they are not in the package dependencies, the free Firely Terminal command line tool can inflate the packages for which snapshots are missing.
 
-1. Download the following packages **with snapshots** from Simplifier:
-  - [nictiz.fhir.nl.r4.nl-core](https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core) .
-  - [nictiz.fhir.nl.r4.zib2020](https://simplifier.net/packages/nictiz.fhir.nl.r4.zib2020).
-2. Overwrite the contents of
-  - `~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.10.0/package` with the contents of the corresponding `tgz`.
-  - `~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.10.0/package` with the contents of the corresponding `tgz`.
-3. Re-run `sushi`.
+Install the free Firely Terminal command and run the inflate command:
 
+```bash
+dotnet tool install -g firely.terminal
 
-> [!warning]
-> The above uses version 0.10.0 of the nl-core package. Please note that version numbers may have changed the meantime.
+# If not installed (unpacked in the .fhir package directory) yet:
+fhir install nictiz.fhir.nl.r4.medicationprocess9@2.0.0-rc.3
+
+fhir inflate --package nictiz.fhir.nl.r4.medicationprocess9@2.0.0-rc.3 --force
+```
