@@ -19,6 +19,7 @@ Id: ncr-ehr-condition
 * bodySite.extension[laterality] ^mustSupport = true
 * subject only Reference(NcrEhrPatient)
 * subject MS
+* subject ^type.aggregation = #bundled
 * recordedDate 1.. MS
 * stage ^short = "Cancer stage"
 * stage ..1
