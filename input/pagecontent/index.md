@@ -51,6 +51,7 @@ Op dit moment zijn de volgende profielen ontwikkeld:
 - `NcrEhrMedicationAgreement`
 - `NcrEhrMedicationAdministration`
 - `NcrEhrLaboratoryTestResult`
+- `NcrEhrLabServiceRequest`
 
 ### Proces na Binnenkomend Bericht
 

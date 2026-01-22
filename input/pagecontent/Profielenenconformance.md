@@ -15,6 +15,7 @@ Deze sectie beschrijft welke profielen beschikbaar zijn en aan welke profielen m
 | `NcrEhrMedicationAdminstration` | `MpPharmaceuticalProduct` | |
 | `NcrEhrMedicationAgreement` | `MpMedicationAgreement` | |
 | `NcrEhrLaboratoryResult` | `nl-core-LaboratoryTestResult` | |
+| `NcrEhrLabServiceRequest` | `ServiceRequest` | |
 {: .grid }
 
 

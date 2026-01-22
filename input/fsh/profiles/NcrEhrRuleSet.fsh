@@ -1,7 +1,7 @@
 RuleSet: MetaRules
-* ^version = "1.3.0"
+* ^version = "1.4.0"
 * ^status = #draft
-* ^date = "2025-09-10"
+* ^date = "2026-01-22"
 * ^experimental = false
 * ^publisher = "IKNL"
 * ^contact.name = "IKNL"
