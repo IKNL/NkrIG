@@ -2,8 +2,7 @@ Profile: NcrEhrLabServiceRequest
 Parent: http://hl7.org/fhir/StructureDefinition/ServiceRequest
 Id: ncr-ehr-lab-service-request
 Title: "Service request"
-Description: "A FHIR-core derived service request profile that specifies the linkage of Laboratory test result to a tumour through the `reasonReference`
-
+Description: "A FHIR-core derived service request profile that specifies the linkage of Laboratory test result to a tumour through the `reasonReference`"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
