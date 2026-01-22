@@ -7,6 +7,7 @@ Alias: $condition-category-vs = http://hl7.org/fhir/ValueSet/condition-category
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $icd-10-nl = http://hl7.org/fhir/sid/icd-10-nl
 Alias: $sct = http://snomed.info/sct
+Alias: $loinc = http://loinc.org
 Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 Alias: $document-type = http://fhir.iknl.nl/fhir/iknl-ncr-ehr-r4/NamingSystem/document-type
 Alias: $workflow-episodeOfCare = http://hl7.org/fhir/StructureDefinition/workflow-episodeOfCare

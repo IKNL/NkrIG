@@ -14,3 +14,9 @@ Title: "Bericht voor verrichting"
 * entry[=].resource = encounter-diagnosis-2
 * entry[+].fullUrl = "https://fhir.example.org/Procedure/procedure-1"
 * entry[=].resource = procedure-1
+* entry[+].fullUrl = "https://fhir.example.org/ServiceRequest/lab-service-request-1"
+* entry[=].resource = lab-service-request-1
+* entry[+].fullUrl = "https://fhir.example.org/Condition/problem-list-condition-1"
+* entry[=].resource = problem-list-condition-1
+* entry[+].fullUrl = "https://fhir.example.org/LaboratoryTestResult/laboratory-test-result-1"
+* entry[=].resource = laboratory-test-result-1

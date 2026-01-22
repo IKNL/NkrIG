@@ -1,14 +1,13 @@
-Profile: NcrEhrLaboratoryResult
+Profile: NcrEhrLaboratoryTestResult
 Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-LaboratoryTestResult
-Id: ncr-ehr-laboratory-result
-Title: "Ncr Ehr Laboratory Test Results"
-Description: "A laboratory result describes the result of a laboratory analysis"
+Id: ncr-ehr-laboratory-test-result
+Title: "Ncr Ehr Laboratory Test Result"
+Description: "A nl-core derived Laboratory Test Result profile that specifies the linkage to a tumor condition through the `ServiceRequest.reasonReference` on which the Lab Test Result is based. Also refines the code to be from a required value set of LOINC codes."
 * status = #final
-* basedOn only Reference(NcrEhrServiceRequest)
+* basedOn only Reference(NcrEhrLabServiceRequest)
 * basedOn ^type.aggregation = #bundled
 * code MS
-* code ^binding.strength = #required
-* code ^binding.valueSet = $test-code-loinc-codelijst //nl-core sipp
+* code from $test-code-loinc-codelijst (required) //nl-core valueset
 * effective[x] 1..1
 * effective[x] only dateTime 
 * subject MS
