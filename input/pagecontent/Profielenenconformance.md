@@ -11,11 +11,11 @@ Deze sectie beschrijft welke profielen beschikbaar zijn en aan welke profielen m
 | `NcrEhrProcedureEvent` | `NL-Core-Procedure-event` | Required |
 | `NcrEhrHealthcareProvider` |`NL-Core-HealthcareProvider-Organization` | Required |
 | `NcrEhrCondition` | `NL-Core-Problem` | Required |
-| `NcrEhrMedication` | `MpPharmaceuticalProduct` | |
-| `NcrEhrMedicationAdminstration` | `MpPharmaceuticalProduct` | |
-| `NcrEhrMedicationAgreement` | `MpMedicationAgreement` | |
-| `NcrEhrLaboratoryResult` | `nl-core-LaboratoryTestResult` | |
-| `NcrEhrLabServiceRequest` | `ServiceRequest` | |
+| `NcrEhrMedication` | `MpPharmaceuticalProduct` | Optional |
+| `NcrEhrMedicationAdminstration` | `MpPharmaceuticalProduct` | Optional |
+| `NcrEhrMedicationAgreement` | `MpMedicationAgreement` | Optional |
+| `NcrEhrLaboratoryResult` | `nl-core-LaboratoryTestResult` | Optional |
+| `NcrEhrLabServiceRequest` | `ServiceRequest` | optional |
 {: .grid }
 
 

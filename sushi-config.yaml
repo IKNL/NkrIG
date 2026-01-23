@@ -68,7 +68,7 @@ dependencies:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
-  path-expansion-params: Parameters-expansion.json
+  path-expansion-params: ..\..\input\_resources\Parameters-expansion.json
   apply-version: false
   default-version: false
   apply-copyright: false
