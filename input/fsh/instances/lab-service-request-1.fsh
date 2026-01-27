@@ -6,6 +6,6 @@ Usage: #inline
 * status = #completed
 * intent = #order
 * category = $sct#108252007
-* code = $loinc#718-7 // Hemoglobin [Mass/volume] in Blood
+* code = $loinc#2857-1 //Prostate specific Ag [Mass/volume] in Serum or Plasma
 * subject = Reference(https://fhir.example.org/patient-2)
 * reasonReference = Reference(https://fhir.example.org/problem-list-condition-1)  
