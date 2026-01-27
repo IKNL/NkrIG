@@ -7,5 +7,5 @@ Usage: #inline
 * intent = #order
 * category = $sct#108252007
 * code = $loinc#2857-1 //Prostate specific Ag [Mass/volume] in Serum or Plasma
-* subject = Reference(https://fhir.example.org/patient-2)
-* reasonReference = Reference(https://fhir.example.org/problem-list-condition-1)  
+* subject = Reference(https://fhir.example.org/Patient/patient-2)
+* reasonReference = Reference(https://fhir.example.org/Condition/problem-list-condition-1)  
