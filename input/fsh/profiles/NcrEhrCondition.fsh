@@ -1,9 +1,7 @@
 Profile: NcrEhrCondition
-Parent: $nl-core-Problem
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem
 Id: ncr-ehr-condition
-* ^version = "1.3.0"
-* ^status = #active
-* ^date = "2025-02-10"
+* insert MetaRules
 * clinicalStatus 1.. MS
 * clinicalStatus = $condition-clinical#active
 * category 1..
@@ -21,6 +19,7 @@ Id: ncr-ehr-condition
 * bodySite.extension[laterality] ^mustSupport = true
 * subject only Reference(NcrEhrPatient)
 * subject MS
+* subject ^type.aggregation = #bundled
 * recordedDate 1.. MS
 * stage ^short = "Cancer stage"
 * stage ..1

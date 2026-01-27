@@ -1,7 +1,5 @@
 Profile: NcrEhrHealthcareProvider
-Parent: $nl-core-HealthcareProvider-Organization
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization
 Id: ncr-ehr-healthcare-provider
-* ^version = "1.2.2"
-* ^status = #active
-* ^date = "2025-02-10"
+* insert MetaRules
 * identifier[agb] 1..1 MS

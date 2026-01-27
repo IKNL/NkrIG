@@ -43,3 +43,10 @@ IKNL houdt de (meta)gegevens bij met betrekking tot de bron, het verwerkingsdoel
 #### NcrEhrCondition
 - Diagnosescodes moeten voldoen aan de ICD-10-NL specificatie
 - Lateralisatie moet worden vastgelegd indien van toepassing
+#### NcrEhrLaboratoryTestResult
+- Testcode moet voldoen aan de LOINC code standaard
+- De laboratorium test moet gekoppeld zijn aan NcrEhrPatient en NcrEhrLabServiceRequest
+#### NcrEhrLabserviceRequest 
+- Testcode moet voldoen aan de LOINC code standaard
+- De service request moet gekoppeld zijn aan NhrEhrPatient en NhrEhrCondition
+ 

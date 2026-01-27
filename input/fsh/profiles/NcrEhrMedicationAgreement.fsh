@@ -1,9 +1,7 @@
 Profile: NcrEhrMedicationAgreement
-Parent: MpMedicationAgreement
+Parent: http://nictiz.nl/fhir/StructureDefinition/mp-MedicationAgreement
 Id: ncr-ehr-medication-agreement
-* ^version = "1.2.2"
-* ^status = #active
-* ^date = "2025-02-10"
+* insert MetaRules
 * status = #completed
 * intent = #order
 * medicationReference 1..1 MS

@@ -1,9 +1,7 @@
 Profile: NcrEhrProcedureEvent
-Parent: $nl-core-Procedure-event
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-event
 Id: ncr-ehr-procedure-event
-* ^version = "1.2.2"
-* ^status = #active
-* ^date = "2025-02-10"
+* insert MetaRules
 * extension 1..
 * extension contains $workflow-episodeOfCare named episodeOfCare 1..1
 * extension[episodeOfCare] ^isModifier = false

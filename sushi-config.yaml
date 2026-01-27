@@ -9,7 +9,7 @@ name: iknl_ncr_ehr_r4
 title: FHIR Implementatiegids voor de Nederlandse Kankerregistratie
 description: Deze implementatiegids beschrijft hoe ziekenhuizen, epd-leveranciers en andere partijen die bevoegd zijn om data uit elektronische patiëntendossiers (epd's) of andere relevante databronnen te halen, verbinding kunnen maken met de Nederlandse Kankerregistratie (NKR).
 status: draft # draft | active | retired | unknown
-version: 1.3.0
+version: 1.4.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2024+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -25,9 +25,9 @@ publisher:
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  nictiz.fhir.nl.r4.nl-core: 0.10.0-beta.1
-  nictiz.fhir.nl.r4.zib2020: 0.10.0-beta.1
-  nictiz.fhir.nl.r4.medicationprocess9: 2.0.0-beta.5 
+  nictiz.fhir.nl.r4.nl-core: 0.12.0-beta.4
+  nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.4
+  nictiz.fhir.nl.r4.medicationprocess9: 2.0.0-rc.3
 
 # dependencies:
 #   hl7.fhir.us.core: 3.1.0
@@ -68,7 +68,7 @@ dependencies:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
-  path-expansion-params: Parameters-expansion.json
+  path-expansion-params: ..\..\input\_resources\Parameters-expansion.json
   apply-version: false
   default-version: false
   apply-copyright: false

@@ -1,9 +1,7 @@
 Profile: NcrEhrSchemaDocument
 Parent: DocumentReference
 Id: ncr-ehr-schema-document
-* ^version = "1.2.2"
-* ^status = #active
-* ^date = "2025-02-10"
+* insert MetaRules
 * status = #current (exactly)
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"

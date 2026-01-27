@@ -1,9 +1,7 @@
 Profile: NcrEhrPatient
-Parent: $nl-core-Patient
+Parent: http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 Id: ncr-ehr-patient
-* ^version = "1.2.3"
-* ^status = #active
-* ^date = "2025-07-04"
+* insert MetaRules
 * identifier contains
     patientnummer 1..1 MS
 * identifier[bsn] 0..0   
