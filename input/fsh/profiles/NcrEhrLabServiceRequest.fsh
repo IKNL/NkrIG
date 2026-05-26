@@ -9,7 +9,6 @@ Description: "A FHIR-core derived service request profile that specifies the lin
 * identifier ^slicing.rules = #open
 * identifier contains 
     ordernumber 0..1
-* identifier[ordernumber].type = $v2-0203#PLAC
 * status = #completed
 * intent = #order
 * category = $sct#108252007 // Laboratory procedure
