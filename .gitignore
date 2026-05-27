@@ -6,3 +6,4 @@ output
 temp
 template
 sushi-generated-packages
+vendor/
