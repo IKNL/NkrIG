@@ -1,0 +1,23 @@
+x-ig-common: &ig-common
+  image: nkrig-builder:latest
+  working_dir: /work
+  volumes:
+    - .:/work
+
+services:
+  ig-build:
+    <<: *ig-common
+    build: .
+    command: ["./_genonce.sh"]
+
+  ig-sushi-package:
+    <<: *ig-common
+    command: ["./scripts/sushi-package.sh"]
+
+  ig-watch:
+    <<: *ig-common
+    command: ["./_gencontinuous.sh"]
+
+  ig-update-publisher:
+    <<: *ig-common
+    command: ["./_updatePublisher.sh", "-y"]

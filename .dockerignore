@@ -1,0 +1,9 @@
+output/
+temp/
+fsh-generated/
+input-cache/
+template/
+.git/
+.github/
+*.md
+!vendor/**
