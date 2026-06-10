@@ -2,10 +2,13 @@
 set -euo pipefail
 
 # Runs SUSHI and assembles a FHIR package with:
-#   - StructureDefinition resources (profiles/extensions)
+#   - StructureDefinition resources (profiles/extensions) including snapshots
 #   - ImplementationGuide resource
 #   - example/ folder with Bundle instances
 #   - .index.json (package index; no .index.db)
+#
+# Snapshot generation requires dependency packages that already contain snapshots
+# (see vendor/ and README.md).
 #
 # Output:
 #   sushi-generated-packages/<packageId>#<version>/package/...
@@ -47,8 +50,8 @@ TGZ_NAME="${PACKAGE_ID}-${PACKAGE_VERSION}.tgz"
 
 mkdir -p "${PACKAGE_CONTENT_DIR}"
 
-echo "Running SUSHI to generate resources..."
-sushi .
+echo "Running SUSHI to generate resources (with snapshots)..."
+sushi -s .
 
 GEN_RES_DIR="fsh-generated/resources"
 if [[ ! -d "${GEN_RES_DIR}" ]]; then
@@ -56,9 +59,45 @@ if [[ ! -d "${GEN_RES_DIR}" ]]; then
   exit 1
 fi
 
+verify_structure_definition_snapshots() {
+  if ! command -v python3 >/dev/null 2>&1; then
+    echo "WARNING: python3 not available; skipping StructureDefinition snapshot verification"
+    return 0
+  fi
+
+  python3 - <<'PY'
+import json
+import sys
+from pathlib import Path
+
+gen_res_dir = Path("fsh-generated/resources")
+missing = []
+
+for path in sorted(gen_res_dir.glob("StructureDefinition-*.json")):
+    with path.open(encoding="utf-8") as f:
+        resource = json.load(f)
+    snapshot = resource.get("snapshot")
+    if not snapshot or not snapshot.get("element"):
+        missing.append(path.name)
+
+if missing:
+    print("ERROR: SUSHI did not generate snapshots for:", ", ".join(missing), file=sys.stderr)
+    print(
+        "Ensure dependency packages with snapshots are installed "
+        "(see vendor/ and README.md).",
+        file=sys.stderr,
+    )
+    sys.exit(1)
+
+print(f"Verified snapshots in {len(list(gen_res_dir.glob('StructureDefinition-*.json')))} StructureDefinition(s)")
+PY
+}
+
+verify_structure_definition_snapshots
+
 echo "Creating package folder at ${PACKAGE_CONTENT_DIR}"
-rm -rf "${PACKAGE_CONTENT_DIR:?}/"*
-mkdir -p "${PACKAGE_CONTENT_DIR}" "${EXAMPLE_DIR}"
+rm -rf "${PACKAGE_DIR}"
+mkdir -p "${EXAMPLE_DIR}"
 
 shopt -s nullglob
 STRUCTURE_DEFS=( "${GEN_RES_DIR}"/StructureDefinition-*.json )
@@ -143,10 +182,14 @@ package_dir = Path(os.environ["PACKAGE_CONTENT_DIR"])
 entries = []
 
 for path in sorted(package_dir.glob("*.json")):
-    if path.name == "package.json":
+    if path.name == "package.json" or path.name.startswith("."):
         continue
     with path.open(encoding="utf-8") as f:
         resource = json.load(f)
+
+    if "resourceType" not in resource or "id" not in resource:
+        print(f"Skipping non-resource JSON file: {path.name}")
+        continue
 
     entry = {
         "filename": path.name,
