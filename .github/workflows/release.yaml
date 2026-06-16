@@ -38,7 +38,7 @@ jobs:
 
       - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.12.0-beta.4
       - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.12.0-beta.4
-      - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-rc.3
+      - run: mkdir -p ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-rc.7
       
       - name: Manually install nl-core dependency *with* snapshots
         run: tar xvzf vendor/nictiz.fhir.nl.r4.nl-core-0.12.0-beta.4-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.nl-core#0.12.0-beta.4
@@ -47,10 +47,10 @@ jobs:
         run: tar xvzf vendor/nictiz.fhir.nl.r4.zib2020-0.12.0-beta.4-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.zib2020#0.12.0-beta.4
 
       - name: Manually install medicationprocess9 dependency *with* snapshots
-        run: tar xvzf vendor/nictiz.fhir.nl.r4.medicationprocess9-2.0.0-rc.3-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-rc.3
+        run: tar xvzf vendor/nictiz.fhir.nl.r4.medicationprocess9-2.0.0-rc.7-snapshots.tgz -C ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-rc.7
 
       - name: remove duplicate values for meta.source-property of ValueSet-resources in the remedicationprocess9 package
-        run: find ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-rc.3 -type f -name '*' -exec sed -i 's/\("meta":{\("lastUpdated":"[^"]*",\)\?\)"source":"http:\/\/decor\.nictiz\.nl\/fhir\/4.0\/mp-",/\1/' {} \;
+        run: find ~/.fhir/packages/nictiz.fhir.nl.r4.medicationprocess9#2.0.0-rc.7 -type f -name '*' -exec sed -i 's/\("meta":{\("lastUpdated":"[^"]*",\)\?\)"source":"http:\/\/decor\.nictiz\.nl\/fhir\/4.0\/mp-",/\1/' {} \;
 
       - name: Get IG Publisher jar
         run: curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
