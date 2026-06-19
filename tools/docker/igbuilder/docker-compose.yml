@@ -2,12 +2,14 @@ x-ig-common: &ig-common
   image: nkrig-builder:latest
   working_dir: /work
   volumes:
-    - .:/work
+    - ../../..:/work
 
 services:
   ig-build:
     <<: *ig-common
-    build: .
+    build:
+      context: ../../..
+      dockerfile: tools/docker/igbuilder/Dockerfile
     command: ["./_genonce.sh"]
 
   ig-sushi-package:

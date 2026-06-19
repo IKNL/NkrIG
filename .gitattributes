@@ -2,5 +2,5 @@
 _genonce.sh text eol=lf
 _gencontinuous.sh text eol=lf
 _updatePublisher.sh text eol=lf
-scripts/docker-entrypoint.sh text eol=lf
+tools/docker/igbuilder/docker-entrypoint.sh text eol=lf
 scripts/sushi-package.sh text eol=lf

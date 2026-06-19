@@ -2,7 +2,7 @@
 
 This repository includes a Linux container image with the tooling required to build the FHIR Implementation Guide locally, without installing Java, SUSHI, Jekyll, or Graphviz on your host machine.
 
-The image is aligned with [`.github/workflows/main.yaml`](.github/workflows/main.yaml) (Ubuntu, Java 21, Node.js, SUSHI, Jekyll, Graphviz, IG Publisher).
+The image is aligned with [`.github/workflows/main.yaml`](../../../.github/workflows/main.yaml) (Ubuntu, Java 21, Node.js, SUSHI, Jekyll, Graphviz, IG Publisher).
 
 ## Prerequisites on your host
 
@@ -23,7 +23,7 @@ You do **not** need Java, Node, SUSHI, or Jekyll installed on Windows when using
 | `curl`, `git` | Scripts and package downloads |
 | IG Publisher JAR | Pre-downloaded to `/opt/ig-publisher/publisher.jar` |
 
-On each container start, the entrypoint script ([`scripts/docker-entrypoint.sh`](scripts/docker-entrypoint.sh)):
+On each container start, the entrypoint script ([`tools/docker/igbuilder/docker-entrypoint.sh`](docker-entrypoint.sh)):
 
 1. Copies `publisher.jar` into `input-cache/` if it is missing
 2. Installs Nictiz snapshot packages from `vendor/*.tgz` (when present)
@@ -33,21 +33,23 @@ On each container start, the entrypoint script ([`scripts/docker-entrypoint.sh`]
 
 | File | Description |
 |------|-------------|
-| [`Dockerfile`](Dockerfile) | Image definition |
-| [`docker-compose.yml`](docker-compose.yml) | Compose services for build, watch, and publisher update |
-| [`scripts/docker-entrypoint.sh`](scripts/docker-entrypoint.sh) | Startup preparation |
-| [`vendor/`](vendor/) | Optional local Nictiz snapshot packages (not in git) |
-| [`.dockerignore`](.dockerignore) | Excludes build artifacts from the image build context |
+| [`tools/docker/igbuilder/Dockerfile`](Dockerfile) | Image definition |
+| [`tools/docker/igbuilder/docker-compose.yml`](docker-compose.yml) | Compose services for build, watch, and publisher update |
+| [`tools/docker/igbuilder/docker-entrypoint.sh`](docker-entrypoint.sh) | Startup preparation |
+| [`vendor/`](../../../vendor/) | Optional local Nictiz snapshot packages (not in git) |
+| [`.dockerignore`](../../../.dockerignore) | Excludes build artifacts from the image build context |
 
 ## Quick start
 
 Open a terminal in the repository root (PowerShell, cmd, or WSL).
 
+All `docker compose` commands below use `-f tools/docker/igbuilder/docker-compose.yml` from the repo root. Alternatively, `cd tools/docker/igbuilder` and omit the `-f` flag.
+
 ### 1. Build the image (once)
 
 ```powershell
 cd "c:\Repositories\FHIR Profiling and implementation guide\NkrIG"
-docker compose build ig-build
+docker compose -f tools/docker/igbuilder/docker-compose.yml build ig-build
 ```
 
 This creates the image `nkrig-builder:latest`. Only the `ig-build` service defines `build:`; other services reuse the same image.
@@ -58,7 +60,7 @@ SUSHI depends on Nictiz packages that must include **snapshots**. Without them, 
 
 > Structure Definition … is missing a snapshot. Snapshot is required for import.
 
-Download the packages **with snapshots** from [Simplifier](https://simplifier.net/) and place the `.tgz` files in the `vendor/` folder. Expected names (versions must match [`sushi-config.yaml`](sushi-config.yaml)):
+Download the packages **with snapshots** from [Simplifier](https://simplifier.net/) and place the `.tgz` files in the `vendor/` folder. Expected names (versions must match [`sushi-config.yaml`](../../../sushi-config.yaml)):
 
 | File in `vendor/` | Package |
 |-------------------|---------|
@@ -68,12 +70,12 @@ Download the packages **with snapshots** from [Simplifier](https://simplifier.ne
 
 The entrypoint also accepts similar filenames matching `vendor/nictiz.fhir.nl.r4.*-*-snapshots.tgz`.
 
-If `vendor/` is empty, SUSHI will try to download dependencies from the registry; snapshot-related failures are then possible (see [README.md](README.md) troubleshooting).
+If `vendor/` is empty, SUSHI will try to download dependencies from the registry; snapshot-related failures are then possible (see [README.md](../../../README.md) troubleshooting).
 
 ### 3. Run a one-off IG build
 
 ```powershell
-docker compose run --rm ig-build
+docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-build
 ```
 
 This runs `./_genonce.sh` inside the container. Output is written to your working copy:
@@ -85,7 +87,7 @@ This runs `./_genonce.sh` inside the container. Output is written to your workin
 ### 4. Watch mode (rebuild on file changes)
 
 ```powershell
-docker compose run --rm ig-watch
+docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-watch
 ```
 
 Runs `./_gencontinuous.sh` (equivalent to `_genonce.sh -watch`).
@@ -93,7 +95,7 @@ Runs `./_gencontinuous.sh` (equivalent to `_genonce.sh -watch`).
 ### 5. Update the IG Publisher in the repo
 
 ```powershell
-docker compose run --rm ig-update-publisher
+docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-update-publisher
 ```
 
 Runs `./_updatePublisher.sh -y` to refresh `publisher.jar` and optionally update helper scripts.
@@ -107,7 +109,7 @@ This runs **only** the SUSHI compiler and assembles a FHIR package aligned with 
 - `.index.json` package index (`.index.db` is not created)
 
 ```powershell
-docker compose run --rm ig-sushi-package
+docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-sushi-package
 ```
 
 Outputs are written to:
@@ -115,7 +117,7 @@ Outputs are written to:
 - `sushi-generated-packages/<packageId>#<version>/package/` (unpacked package folder)
 - `sushi-generated-packages/<packageId>#<version>/<packageId>-<version>.tgz` (tarball)
 
-`packageId` and `version` are taken from [`sushi-config.yaml`](sushi-config.yaml).
+`packageId` and `version` are taken from [`sushi-config.yaml`](../../../sushi-config.yaml).
 
 ## Docker Compose services
 
@@ -130,14 +132,17 @@ All services mount the repository at `/work` so edits on the host are visible in
 
 ## Alternative: plain Docker (without Compose)
 
+From the repository root:
+
 ```bash
-docker build -t nkrig-builder .
+docker build -f tools/docker/igbuilder/Dockerfile -t nkrig-builder .
 docker run --rm -it -v "${PWD}:/work" -w /work nkrig-builder ./_genonce.sh
 ```
 
 On Windows PowerShell, use the full path for the volume:
 
 ```powershell
+docker build -f tools/docker/igbuilder/Dockerfile -t nkrig-builder .
 docker run --rm -it -v "${PWD}:/work" -w /work nkrig-builder ./_genonce.sh
 ```
 
@@ -168,19 +173,19 @@ flowchart LR
 
 ### `bash\r: No such file or directory`
 
-Shell scripts were saved with Windows (CRLF) line endings. The entrypoint strips `\r` from `_genonce.sh` and related scripts on each run. Ensure [`scripts/docker-entrypoint.sh`](scripts/docker-entrypoint.sh) itself uses LF (see [`.gitattributes`](.gitattributes)).
+Shell scripts were saved with Windows (CRLF) line endings. The entrypoint strips `\r` from `_genonce.sh` and related scripts on each run. Ensure [`tools/docker/igbuilder/docker-entrypoint.sh`](docker-entrypoint.sh) itself uses LF (see [`.gitattributes`](../../../.gitattributes)).
 
 ### IG Publisher not found
 
 Run a build once so the entrypoint can create `input-cache/publisher.jar`, or run:
 
 ```powershell
-docker compose run --rm ig-update-publisher
+docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-update-publisher
 ```
 
 ### Missing snapshot errors from SUSHI
 
-Add the three Nictiz snapshot `.tgz` files to `vendor/` (see step 2 above), then re-run `docker compose run --rm ig-build`.
+Add the three Nictiz snapshot `.tgz` files to `vendor/` (see step 2 above), then re-run `docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-build`.
 
 ### Offline / terminology server unavailable
 
@@ -197,7 +202,7 @@ The image is roughly **1–2 GB** (Jekyll/Ruby, Java, Node, and the ~100 MB publ
 ### Rebuild after Dockerfile changes
 
 ```powershell
-docker compose build --no-cache ig-build
+docker compose -f tools/docker/igbuilder/docker-compose.yml build --no-cache ig-build
 ```
 
 ## Windows-specific notes
@@ -212,10 +217,10 @@ docker compose build --no-cache ig-build
 | Approach | Pros | Cons |
 |----------|------|------|
 | **Docker (this guide)** | Reproducible; matches CI stack; no local Java/Jekyll setup | Large image; first build downloads dependencies |
-| **Local / WSL** ([README.md](README.md)) | Faster iteration once configured | Manual install of Java, Node, SUSHI, Jekyll, Graphviz |
+| **Local / WSL** ([README.md](../../../README.md)) | Faster iteration once configured | Manual install of Java, Node, SUSHI, Jekyll, Graphviz |
 
 ## Further reading
 
-- [README.md](README.md) — project overview and manual setup
+- [README.md](../../../README.md) — project overview and manual setup
 - [FSH / SUSHI](https://fshschool.org/docs/sushi/)
 - [HL7 IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
