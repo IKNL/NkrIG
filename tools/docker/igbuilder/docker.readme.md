@@ -54,13 +54,19 @@ docker compose -f tools/docker/igbuilder/docker-compose.yml build ig-build
 
 This creates the image `nkrig-builder:latest`. Only the `ig-build` service defines `build:`; other services reuse the same image.
 
-### 2. (Recommended) Add Nictiz snapshot packages
+### 2. Nictiz snapshot packages in `vendor/`
 
 SUSHI depends on Nictiz packages that must include **snapshots**. Without them, you may see errors such as:
 
 > Structure Definition … is missing a snapshot. Snapshot is required for import.
 
-Download the packages **with snapshots** from [Simplifier](https://simplifier.net/) and place the `.tgz` files in the `vendor/` folder. Expected names (versions must match [`sushi-config.yaml`](../../../sushi-config.yaml)):
+On container startup, the entrypoint reads Nictiz dependencies from [`sushi-config.yaml`](../../../sushi-config.yaml) and checks `vendor/`:
+
+1. If `vendor/` is **empty** (or missing), it tries to download the required packages from Simplifier.
+2. If `vendor/` is **not empty** but does **not** contain archives matching those dependencies, it tries to download the missing packages.
+3. If a required download **fails**, the container **stops** and prints the reason. Place the packages manually in `vendor/` and run again.
+
+Expected filenames (versions come from `sushi-config.yaml`):
 
 | File in `vendor/` | Package |
 |-------------------|---------|
@@ -70,7 +76,24 @@ Download the packages **with snapshots** from [Simplifier](https://simplifier.ne
 
 The entrypoint also accepts similar filenames matching `vendor/nictiz.fhir.nl.r4.*-*-snapshots.tgz`.
 
-If `vendor/` is empty, SUSHI will try to download dependencies from the registry; snapshot-related failures are then possible (see [README.md](../../../README.md) troubleshooting).
+#### Simplifier credentials (often required)
+
+The versions in `sushi-config.yaml` are not always available from the **public** Simplifier package registry. For those versions you usually need a Simplifier account.
+
+Set credentials via environment variables before running compose (for example in a local `.env` file next to `docker-compose.yml` — do **not** commit this file):
+
+```env
+SIMPLIFIER_EMAIL=you@example.com
+SIMPLIFIER_PASSWORD=your-simplifier-password
+```
+
+Alternatively, pass a JWT token directly:
+
+```env
+SIMPLIFIER_TOKEN=your-simplifier-jwt-token
+```
+
+If download fails without credentials, download the packages **with snapshots** manually from [Simplifier](https://simplifier.net/) and place the `.tgz` files in `vendor/`.
 
 ### 3. Run a one-off IG build
 
@@ -185,7 +208,11 @@ docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-update-p
 
 ### Missing snapshot errors from SUSHI
 
-Add the three Nictiz snapshot `.tgz` files to `vendor/` (see step 2 above), then re-run `docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-build`.
+If automatic download failed, add the three Nictiz snapshot `.tgz` files to `vendor/` manually (see step 2 above), or configure `SIMPLIFIER_EMAIL` / `SIMPLIFIER_PASSWORD`, then re-run:
+
+```powershell
+docker compose -f tools/docker/igbuilder/docker-compose.yml run --rm ig-build
+```
 
 ### Offline / terminology server unavailable
 

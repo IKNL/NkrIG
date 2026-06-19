@@ -3,6 +3,10 @@ x-ig-common: &ig-common
   working_dir: /work
   volumes:
     - ../../..:/work
+  environment:
+    SIMPLIFIER_EMAIL: ${SIMPLIFIER_EMAIL:-}
+    SIMPLIFIER_PASSWORD: ${SIMPLIFIER_PASSWORD:-}
+    SIMPLIFIER_TOKEN: ${SIMPLIFIER_TOKEN:-}
 
 services:
   ig-build:

@@ -7,4 +7,5 @@ temp
 template
 sushi-generated-packages
 vendor/
+tools/docker/igbuilder/.env
 tools/docker/package-generation/data/
