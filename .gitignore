@@ -7,3 +7,4 @@ temp
 template
 sushi-generated-packages
 vendor/
+tools/docker/package-generation/data/
