@@ -9,7 +9,12 @@ Id: ncr-ehr-medication
     and atcCoding 1..1 MS
 * code.coding[ziCoding].system = "urn:oid:2.16.840.1.113883.2.4.4.8" (exactly)
 * code.coding[ziCoding].code 1..1
-* code.coding[ziCoding].display 1..
 * code.coding[atcCoding].system = "http://www.whocc.no/atc" (exactly)
 * code.coding[atcCoding].code 1..
-* code.coding[atcCoding].display 1..
+* obeys med-display-value-or-text
+
+Invariant: med-display-value-or-text
+Description: "The code element SHALL contain either a display value or a text value."
+Severity: #error
+Expression: "code.coding.display.exists() or code.text.exists()"
+
