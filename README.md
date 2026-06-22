@@ -1,6 +1,9 @@
 # NkrIG
 Broncode voor de FHIR implementatiegids voor (aanlevering aan de) de Nederlandse Kankerregistratie. Bekijk de implementatiegids op: https://iknl.github.io/NkrIG/
 
+> [!TIP]
+> To build the IG in Docker without installing Java, SUSHI, or Jekyll locally, see [`tools/docker/igbuilder/docker.readme.md`](tools/docker/igbuilder/docker.readme.md).
+
 ### Step 1 - Install required software
 **sushi**
 This project uses [FSH](https://hl7.org/fhir/uv/shorthand/) and [sushi](https://fshschool.org/docs/sushi/). Therefore, it requires [Node.js](https://nodejs.org/en). The [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) additionally requires Java to be present on the system.

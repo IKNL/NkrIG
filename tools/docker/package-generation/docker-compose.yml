@@ -1,0 +1,8 @@
+services:
+  create-package-file:
+    build: .
+    image: package-generation:latest
+    volumes:
+      - ./data/input:/data/input:ro
+      - ./data/output:/data/output
+    command: []

@@ -1,0 +1,29 @@
+x-ig-common: &ig-common
+  image: nkrig-builder:latest
+  working_dir: /work
+  volumes:
+    - ../../..:/work
+  environment:
+    SIMPLIFIER_EMAIL: ${SIMPLIFIER_EMAIL:-}
+    SIMPLIFIER_PASSWORD: ${SIMPLIFIER_PASSWORD:-}
+    SIMPLIFIER_TOKEN: ${SIMPLIFIER_TOKEN:-}
+
+services:
+  ig-build:
+    <<: *ig-common
+    build:
+      context: ../../..
+      dockerfile: tools/docker/igbuilder/Dockerfile
+    command: ["./_genonce.sh"]
+
+  ig-sushi-package:
+    <<: *ig-common
+    command: ["./scripts/sushi-package.sh"]
+
+  ig-watch:
+    <<: *ig-common
+    command: ["./_gencontinuous.sh"]
+
+  ig-update-publisher:
+    <<: *ig-common
+    command: ["./_updatePublisher.sh", "-y"]
