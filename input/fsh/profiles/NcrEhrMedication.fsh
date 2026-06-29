@@ -15,6 +15,5 @@ Id: ncr-ehr-medication
 
 Invariant: med-display-value-or-text
 Description: "The code element SHALL contain either a display value or a text value."
-Severity: #error
+Severity: #warning
 Expression: "code.coding.display.exists() or code.text.exists()"
-

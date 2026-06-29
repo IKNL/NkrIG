@@ -191,8 +191,10 @@ do
 done
 
 [[ "${PACKAGE_NAME}" == "" ]] && echo "No package name was provided, use '--package-name' or '--filename' as an argument to specify a package name" && exit 1
-[[ ! -d "${ig_builder_output_path}" ]] && echo "IG output path ${ig_builder_output_path} does not exist" && exit 1
-[[ ! $(ls -A ${ig_builder_output_path}) ]] && echo "IG Output directory is empty" && exit 1
+
+source_package_file="${ig_builder_output_path}/${ig_generated_package_name}"
+[[ ! -d "${ig_builder_output_path}" ]] && echo "Input directory ${ig_builder_output_path} does not exist. Ensure the volume is mounted (host: tools/docker/package-generation/data/input)." && exit 1
+[[ ! -f "${source_package_file}" ]] && echo "Package file '${ig_generated_package_name}' not found in ${ig_builder_output_path}. Copy the IG builder output to data/input/${ig_generated_package_name} on the host before running." && exit 1
 
 PrepareOutputDirectory
 UnpackTarFile

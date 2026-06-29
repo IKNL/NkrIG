@@ -22,10 +22,12 @@ package-generation/
 ├── docker-compose.yml
 ├── data/
 │   ├── input/
-│   │   └── package.r4.tgz # Place the IG builder output here
+│   │   └── package.r4.tgz # IG builder package (place here before running)
 │   └── output/            # Generated package is written here
 └── DOCKER.md              # This file
 ```
+
+Inside the container, the input directory is `/data/input` (mounted read-only from `data/input/`).
 
 ## Prerequisites
 
@@ -44,13 +46,14 @@ docker compose build
 
 ### 2. Place the input package
 
-Copy the IG builder output into the input volume:
+After building the IG (e.g. with the [igbuilder Docker setup](../igbuilder/docker.readme.md)), copy `package.r4.tgz` into the input volume:
 
 ```bash
-cp package.r4.tgz data/input/package.r4.tgz
+# from tools/docker/package-generation
+cp ../../../output/package.r4.tgz data/input/package.r4.tgz
 ```
 
-The script expects the input file to be named exactly `package.r4.tgz`.
+The script expects the file to be named exactly `package.r4.tgz` in `data/input/` (container path: `/data/input/package.r4.tgz`).
 
 ### 3. Run the package generator
 
@@ -120,6 +123,6 @@ FINAL_OUTPUT_DIR=./data/output ./create-package.sh --filename=ncr-ehr-package.tg
 
 | Problem | Solution |
 |---------|----------|
-| `Package file 'package.r4.tgz' not found` | Ensure `data/input/package.r4.tgz` exists |
+| `Package file 'package.r4.tgz' not found` | Copy the IG builder output to `data/input/package.r4.tgz` on the host (visible in the container as `/data/input/package.r4.tgz`) |
 | `No package name was provided` | Pass a filename argument: `docker compose run --rm create-package-file my-package.tgz` |
 | Permission errors on `data/output` | Ensure the output directory is writable: `chmod 777 data/output` (Linux) |
