@@ -1,5 +1,5 @@
 RuleSet: MetaRules
-* ^version = "1.4.0"
+* ^version = "1.4.2"
 * ^status = #draft
 * ^date = "2026-01-22"
 * ^experimental = false
