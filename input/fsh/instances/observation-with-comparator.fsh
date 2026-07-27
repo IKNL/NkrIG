@@ -4,8 +4,8 @@ Usage: #inline
 * identifier[patientnummer].assigner = Reference(https://fhir.example.org/Organization/organization-1)
 * identifier[patientnummer].value = "009999121"
 * name[nameInformation].extension[nameUsage].valueCode = #NL1
-* name[nameInformation].family = "Kiestra"
-* name[nameInformation].family.extension[lastName].valueString = "Kiestra"
+* name[nameInformation].family = "Test-User"
+* name[nameInformation].family.extension[lastName].valueString = "Test-User"
 * name[nameInformation].given = "Y"
 * gender = #male
 * gender.extension[genderCodelist].valueCodeableConcept = $v3-AdministrativeGender#M
